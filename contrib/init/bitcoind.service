@@ -1,0 +1,22 @@
+[Unit]
+Description=Bitcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=bitcoin
+Group=bitcoin
+
+Type=forking
+PIDFile=/var/lib/jincoind/jincoind.pid
+ExecStart=/usr/bin/jincoind -daemon -pid=/var/lib/jincoind/jincoind.pid \
+-conf=/etc/jincoin/jincoin.conf -datadir=/var/lib/jincoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,67 @@
+Source: jincoin
+Section: utils
+Priority: optional
+Maintainer: Jonas Smedegaard <dr@jones.dk>
+Uploaders: Micah Anderson <micah@debian.org>
+Build-Depends: debhelper,
+ devscripts,
+ automake,
+ libtool,
+ bash-completion,
+ libboost-system-dev (>> 1.35) | libboost-system1.35-dev,
+ libdb4.8++-dev,
+ libssl-dev,
+ pkg-config,
+ libminiupnpc8-dev | libminiupnpc-dev (>> 1.6),
+ libboost-filesystem-dev (>> 1.35) | libboost-filesystem1.35-dev,
+ libboost-program-options-dev (>> 1.35) | libboost-program-options1.35-dev,
+ libboost-thread-dev (>> 1.35) | libboost-thread1.35-dev,
+ libboost-test-dev (>> 1.35) | libboost-test1.35-dev,
+ qt4-qmake,
+ libqt4-dev,
+ libqrencode-dev,
+ libprotobuf-dev, protobuf-compiler,
+ python
+Standards-Version: 3.9.2
+Homepage: https://jin-coin.com/
+Vcs-Git: git://github.com/JinCoin/Jincoin-Core.git
+Vcs-Browser: https://github.com/JinCoin/Jincoin-Core
+
+Package: jincoind
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - daemon
+ Jincoin is an experimental new digital currency that enables instant
+ payments to anyone, anywhere in the world. Jincoin uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. Jincoin Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides the daemon, jincoind, and the CLI tool
+ jincoin-cli to interact with the daemon.
+
+Package: jincoin-qt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - Qt GUI
+ Jincoin is an experimental new digital currency that enables instant
+ payments to anyone, anywhere in the world. Jincoin uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. Jincoin Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides Jincoin-Qt, a GUI for Jincoin based on Qt.
+
+Package: jincoin-tx
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer digital currency - standalone transaction tool
+ Jincoin is an experimental new digital currency that enables instant
+ payments to anyone, anywhere in the world. Jincoin uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. Jincoin Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides jincoin-tx, a command-line transaction creation
+ tool which can be used without a jincoin daemon.  Some means of
+ exchanging minimal transaction data with peers is still required.

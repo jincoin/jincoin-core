@@ -116,8 +116,8 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x18c372fe354185169070e1c23188f3d028271d8445e1be02f50db9aa353ed056"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.push_back(CDNSSeedData("seed1.jin-coin.info", "seed1.jin-coin.info"));
-        vSeeds.push_back(CDNSSeedData("seed2.jin-coin.info", "seed2.jin-coin.info"));
+        vSeeds.push_back(CDNSSeedData("seed1.jin.exchange", "seed1.jin.exchange"));
+        vSeeds.push_back(CDNSSeedData("seed2.jin.exchange", "seed2.jin.exchange"));
         vSeeds.push_back(CDNSSeedData("seed3.jin-coin.info", "seed3.jin-coin.info"));
         vSeeds.push_back(CDNSSeedData("seed1.jin-coin.com", "seed1.jin-coin.com"));
         vSeeds.push_back(CDNSSeedData("seed2.jin-coin.com", "seed2.jin-coin.com"));
@@ -146,11 +146,12 @@ public:
          */
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 541614, uint256S("0x00000000000e1d0b79889859452375fee02c377cd61686323d4cf62e161e546e")),
-            1517061285, // * UNIX timestamp of last checkpoint block
-            579071,     // * total number of transactions between genesis and last checkpoint
+            ( 541614, uint256S("0x00000000000e1d0b79889859452375fee02c377cd61686323d4cf62e161e546e"))
+            ( 593853, uint256S("0xe309298123a72c79bceb8e6cfb72603ccbe68888292b1f525688c224c9c3b999")),
+            1521430684, // * UNIX timestamp of last checkpoint block
+            631405,     // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            1100.0      // * estimated number of transactions per day after checkpoint
+            1200.0      // * estimated number of transactions per day after checkpoint
         };
     }
 };

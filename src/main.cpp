@@ -2464,14 +2464,12 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     // when 75% of the network has upgraded:
     if (block.GetBaseVersion() >= 3 && IsSuperMajority(3, pindex->pprev, chainparams.GetConsensus().nMajorityEnforceBlockUpgrade, chainparams.GetConsensus())) {
         flags |= SCRIPT_VERIFY_DERSIG;
-        printf("Base version: %i\n", block.GetBaseVersion());
     }
 
     // Start enforcing CHECKLOCKTIMEVERIFY, (BIP65) for block.nVersion=4
     // blocks, when 75% of the network has upgraded:
     if (block.GetBaseVersion() >= 4 && IsSuperMajority(4, pindex->pprev, chainparams.GetConsensus().nMajorityEnforceBlockUpgrade, chainparams.GetConsensus())) {
         flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
-        printf("Base version: %i\n", block.GetBaseVersion());
     }
 
     // Start enforcing BIP68 (sequence locks) and BIP112 (CHECKSEQUENCEVERIFY) using versionbits logic.
@@ -3639,7 +3637,6 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
     // if 750 of the last 1,000 blocks are version 2 or greater (51/100 if testnet):
     if (block.GetBaseVersion() >= 2 && IsSuperMajority(3, pindexPrev, consensusParams.nMajorityEnforceBlockUpgrade, consensusParams) && nHeight > 500000)
     {
-        printf("Base version: %i\n", block.GetBaseVersion());
         CScript expect = CScript() << nHeight;
         if (block.vtx[0].vin[0].scriptSig.size() < expect.size() ||
             !std::equal(expect.begin(), expect.end(), block.vtx[0].vin[0].scriptSig.begin())) {

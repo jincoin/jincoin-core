@@ -76,6 +76,7 @@ public:
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 23229; // 90% of 25810
         consensus.nMinerConfirmationWindow = 25810; // nSubsidyHalvingInterval, ~23.6 days
+        consensus.nBlockVersion4UpgradeHeight = 680900; // Miners produce v4 blocks after height 680900
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 9999999999; // January 1, 2008 - 1199145601
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 9999999999; // December 31, 2008 - 1230767999
@@ -178,6 +179,7 @@ public:
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 23229; // 90% of 25810
         consensus.nMinerConfirmationWindow = 25810; // nSubsidyHalvingInterval, ~23.6 days
+        consensus.nBlockVersion4UpgradeHeight = 680900; // Miners produce v4 blocks after height 680900
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 9999999999; // January 1, 2008 - 1199145601
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 9999999999; // December 31, 2008 - 1230767999
@@ -259,11 +261,12 @@ public:
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 30 * 60; // 30 min
         consensus.nPowTargetSpacing = 30;  // 30 sec
-        consensus.nAuxpowChainId = 0x1940; // Auxpow Chain ID = 6464
+        consensus.nAuxpowChainId = 0x00BA; // Auxpow Chain ID = 186
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 45; // 75% for testchains
         consensus.nMinerConfirmationWindow = 60; // Faster than normal for regtest (144 instead of 2016)
+        consensus.nBlockVersion4UpgradeHeight = 0; // Miners produce v4 blocks after height 0
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 999999999999ULL;

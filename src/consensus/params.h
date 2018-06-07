@@ -64,6 +64,8 @@ struct Params {
     uint256 nMinimumChainWork;
     // JIN: Auxpow chain ID parameter
     int32_t nAuxpowChainId;
+    // JIN: Block v4 Upgrade
+    int nBlockVersion4UpgradeHeight;
 };
 } // namespace Consensus
 

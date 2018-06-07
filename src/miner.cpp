@@ -144,7 +144,8 @@ CBlockTemplate* BlockAssembler::CreateNewBlock(const CScript& scriptPubKeyIn)
     // JIN
     const int32_t nChainId = chainparams.GetConsensus ().nAuxpowChainId;
     const int32_t nVersion = ComputeBlockVersion(pindexPrev, chainparams.GetConsensus());
-    pblock->SetBaseVersion(nVersion, nChainId);
+    const uint32_t nnVersion = (nHeight > chainparams.GetConsensus().nBlockVersion4UpgradeHeight) ? 4 : nVersion;
+    pblock->SetBaseVersion(nnVersion, nChainId);
     // -regtest only: allow overriding block.nVersion with
     // -blockversion=N to test forking scenarios
     if (chainparams.MineBlocksOnDemand())

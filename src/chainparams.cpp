@@ -63,6 +63,7 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 25810; // Halving every 25,810 blocks
+        consensus.nSubsidyIncreaseHeight = 1055000; // Adjust subsidy to 1 JIN/block at this height
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
@@ -165,6 +166,7 @@ public:
     CTestNetParams() {
         strNetworkID = "test";
         consensus.nSubsidyHalvingInterval = 25810; // Halving every 25,810 blocks
+        consensus.nSubsidyIncreaseHeight = 1042110; // Adjust subsidy to 1 JIN/block at this height
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
@@ -251,6 +253,7 @@ public:
     CRegTestParams() {
         strNetworkID = "regtest";
         consensus.nSubsidyHalvingInterval = 2581;
+        consensus.nSubsidyIncreaseHeight = 3000; // Adjust subsidy to 1 JIN/block at this height
         consensus.nMajorityEnforceBlockUpgrade = 510;
         consensus.nMajorityRejectBlockOutdated = 750;
         consensus.nMajorityWindow = 1000;
